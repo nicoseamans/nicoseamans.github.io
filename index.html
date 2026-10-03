@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Nico Seamans | Mechanical Engineering Portfolio</title>
+  <title>Nico Seamans | Mechanical Engineering</title>
 
-<meta
-name="description"
-content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing engineering, fixture design, tooling, Formula SAE, and engineering projects."
-
->
+  <meta
+    name="description"
+    content="Nico Seamans is a Mechanical Engineering student at the University of New Brunswick focused on manufacturing, mechanical design, tooling, and practical engineering."
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
   <style>
-
     :root {
       --bg: #f4f6f8;
       --surface: #ffffff;
@@ -63,9 +60,8 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
 
     .container {
       width: min(100% - 40px, var(--max-width));
-      margin: auto;
+      margin: 0 auto;
     }
-
 
     /* =========================
        NAVIGATION
@@ -75,41 +71,41 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
     }
 
     .nav-inner {
       min-height: 70px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
     .logo {
-      font-size: 1.05rem;
-      font-weight: 800;
+      font-size: 18px;
+      font-weight: 700;
       letter-spacing: -0.02em;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 28px;
-      list-style: none;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 500;
     }
 
     .nav-links a {
       color: var(--muted);
-      transition: 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: var(--ink);
     }
-
 
     /* =========================
        HERO
@@ -117,55 +113,57 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
 
     .hero {
       padding: 110px 0 100px;
+      background: var(--surface);
       border-bottom: 1px solid var(--line);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(31, 95, 153, 0.07),
-          transparent 45%
-        );
     }
 
     .eyebrow {
       display: inline-block;
+      margin-bottom: 20px;
+      padding: 7px 12px;
+      background: var(--accent-light);
       color: var(--accent);
+      font-size: 12px;
       font-weight: 700;
-      font-size: 0.8rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 18px;
     }
 
     .hero h1 {
       max-width: 850px;
-      font-size: clamp(3rem, 8vw, 6.2rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
       margin-bottom: 28px;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 700px;
       color: var(--muted);
-      font-size: 1.15rem;
-      line-height: 1.75;
-      margin-bottom: 35px;
+      font-size: 19px;
+      line-height: 1.65;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      margin-top: 34px;
     }
 
     .button {
-      display: inline-block;
-      padding: 12px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
       border: 1px solid var(--ink);
-      font-weight: 700;
-      font-size: 0.9rem;
-      transition: 0.2s ease;
+      font-size: 14px;
+      font-weight: 600;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .button.primary {
@@ -173,106 +171,138 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
       color: white;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
     .button.primary:hover {
       background: var(--accent);
       border-color: var(--accent);
     }
 
+    .button.secondary {
+      background: white;
+    }
+
+    .button.secondary:hover {
+      background: var(--accent-light);
+      border-color: var(--accent);
+    }
 
     /* =========================
        SECTIONS
     ========================= */
 
     section {
-      padding: 90px 0;
-      border-bottom: 1px solid var(--line);
+      padding: 95px 0;
     }
 
     .section-header {
-      margin-bottom: 45px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 48px;
     }
 
-    .section-number {
+    .section-label {
       color: var(--accent);
-      font-weight: 800;
-      font-size: 0.8rem;
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: 0.1em;
-      margin-bottom: 8px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
+    .section-header h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.05;
       letter-spacing: -0.04em;
     }
 
+    .section-description {
+      max-width: 460px;
+      color: var(--muted);
+      font-size: 15px;
+    }
 
     /* =========================
        PROJECTS
     ========================= */
 
+    #work {
+      background: var(--bg);
+    }
+
     .projects {
       display: grid;
-      gap: 25px;
+      gap: 34px;
     }
 
     .project {
       background: var(--surface);
       border: 1px solid var(--line);
-      padding: 34px;
-      transition: 0.25s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-3px);
-      border-color: #aab5bd;
-      box-shadow: 0 12px 35px rgba(16, 24, 32, 0.07);
+      padding: 38px;
     }
 
     .project-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 20px;
+      gap: 25px;
+    }
+
+    .project-number {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
       margin-bottom: 12px;
     }
 
     .project h3 {
-      font-size: 1.45rem;
-      letter-spacing: -0.025em;
-    }
-
-    .tag {
-      white-space: nowrap;
-      height: fit-content;
-      padding: 5px 9px;
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
     }
 
     .project-subtitle {
       color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 20px;
+      font-size: 14px;
     }
 
-    .project p {
+    .tag {
+      flex-shrink: 0;
+      padding: 7px 11px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .project-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 32px;
+    }
+
+    .project-details {
+      display: grid;
+      gap: 22px;
+    }
+
+    .detail h4 {
+      margin-bottom: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .detail p {
       color: var(--muted);
-      margin-bottom: 14px;
+      font-size: 15px;
     }
-
-    .project strong {
-      color: var(--ink);
-    }
-
 
     /* =========================
        PROJECT IMAGES
@@ -280,19 +310,15 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
 
     .project-image {
       position: relative;
-      margin-top: 28px;
-
       width: 100%;
       height: 420px;
-
       display: flex;
       align-items: center;
       justify-content: center;
 
       background: #f1f3f5;
-
       border: 1px solid var(--line);
-      border-radius: 2px;
+      border-radius: 3px;
 
       overflow: hidden;
     }
@@ -300,30 +326,25 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
     .project-image img {
       width: 100%;
       height: 100%;
-
       object-fit: contain;
-
       padding: 14px;
 
-      transition: transform 0.35s ease;
+      transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
     }
 
-    .project:hover .project-image img {
+    .project-image:hover img {
       transform: scale(1.015);
     }
-
-    .image-placeholder {
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-align: center;
-      padding: 30px;
-      max-width: 500px;
-    }
-
 
     /* =========================
        EXPERIENCE
     ========================= */
+
+    #experience {
+      background: var(--surface);
+    }
 
     .experience-list {
       border-top: 1px solid var(--line);
@@ -331,155 +352,193 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
 
     .experience-item {
       display: grid;
-      grid-template-columns: 170px 1fr;
+      grid-template-columns: 190px 1fr;
       gap: 35px;
-      padding: 30px 0;
+      padding: 32px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .experience-date {
       color: var(--muted);
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 500;
     }
 
     .experience-item h3 {
-      margin-bottom: 4px;
-      font-size: 1.2rem;
+      font-size: 22px;
+      line-height: 1.2;
+      margin-bottom: 5px;
     }
 
     .experience-company {
       color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
-    .experience-item p {
+    .experience-item p:not(.experience-company) {
+      max-width: 720px;
       color: var(--muted);
+      font-size: 15px;
     }
-
 
     /* =========================
        ABOUT
     ========================= */
 
+    #about {
+      background: var(--bg);
+    }
+
     .about-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 70px;
     }
 
     .about-text p {
+      margin-bottom: 20px;
       color: var(--muted);
-      margin-bottom: 18px;
+      font-size: 17px;
+      line-height: 1.75;
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
       align-content: flex-start;
+      gap: 9px;
     }
 
     .skill {
+      padding: 9px 13px;
+      background: white;
       border: 1px solid var(--line);
-      background: var(--surface);
-      padding: 8px 12px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 500;
     }
-
 
     /* =========================
        CONTACT
     ========================= */
 
-    .contact {
+    #contact {
       background: var(--ink);
       color: white;
-      border-bottom: none;
     }
 
-    .contact .section-number {
-      color: #82b5df;
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 50px;
     }
 
-    .contact .section-title {
-      max-width: 700px;
-      margin-bottom: 20px;
+    .contact-label {
+      color: #9dbbd3;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .contact h2 {
+      max-width: 650px;
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 22px;
     }
 
     .contact p {
-      color: #b8c2ca;
       max-width: 650px;
-      margin-bottom: 30px;
+      color: #b9c3ca;
+      font-size: 16px;
     }
 
     .contact-links {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
       gap: 12px;
     }
 
-    .contact-button {
-      border: 1px solid #66727b;
-      padding: 12px 18px;
-      font-weight: 700;
-      transition: 0.2s ease;
+    .contact-links a {
+      color: white;
+      border-bottom: 1px solid #65737c;
+      padding-bottom: 4px;
+      font-size: 15px;
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
     }
 
-    .contact-button:hover {
-      background: white;
-      color: var(--ink);
+    .contact-links a:hover {
+      color: #9dbbd3;
+      border-color: #9dbbd3;
     }
-
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-      background: var(--ink);
-      color: #7f8b94;
-      border-top: 1px solid #2b343b;
-      padding: 25px 0;
-      font-size: 0.8rem;
+      padding: 24px 0;
+      background: #0a1116;
+      color: #89959d;
+      font-size: 12px;
     }
 
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
     /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 700px) {
-
+    @media (max-width: 800px) {
       .container {
         width: min(100% - 28px, var(--max-width));
       }
 
       .nav-inner {
-        min-height: 60px;
+        min-height: 62px;
       }
 
       .nav-links {
-        gap: 12px;
-        font-size: 0.75rem;
+        gap: 14px;
+        font-size: 12px;
       }
 
-      .nav-links li:nth-child(3) {
-        display: none;
+      .logo {
+        font-size: 16px;
       }
 
       .hero {
-        padding: 75px 0 70px;
+        padding: 80px 0 70px;
       }
 
       .hero h1 {
-        font-size: 3.5rem;
+        font-size: clamp(44px, 13vw, 65px);
       }
 
       section {
-        padding: 65px 0;
+        padding: 70px 0;
+      }
+
+      .section-header {
+        display: block;
+        margin-bottom: 35px;
+      }
+
+      .section-description {
+        margin-top: 18px;
       }
 
       .project {
@@ -487,17 +546,21 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
       }
 
       .project-top {
-        flex-direction: column;
-        gap: 10px;
+        display: block;
       }
 
       .tag {
-        width: fit-content;
+        display: inline-block;
+        margin-top: 16px;
+      }
+
+      .project-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .project-image {
-        height: 280px;
-        margin-top: 22px;
+        height: 300px;
       }
 
       .project-image img {
@@ -511,12 +574,39 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
 
       .about-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 40px;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
-  </style>
+    @media (max-width: 520px) {
+      .nav-links a:nth-child(3) {
+        display: none;
+      }
 
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .project h3 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -526,641 +616,778 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
   ========================= -->
 
   <nav>
+    <div class="container nav-inner">
 
-```
-<div class="container nav-inner">
+      <a href="#top" class="logo">
+        Nico Seamans
+      </a>
 
-  <a href="#" class="logo">
-    Nico Seamans
-  </a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-
-</div>
-```
-
+    </div>
   </nav>
+
 
   <!-- =========================
        HERO
   ========================= -->
 
-  <header class="hero">
+  <main id="top">
 
-```
-<div class="container">
+    <section class="hero">
 
-  <div class="eyebrow">
-    Mechanical Engineering · UNB
-  </div>
+      <div class="container">
 
-  <h1>
-    Design.<br>
-    Build.<br>
-    Improve.
-  </h1>
-
-  <p>
-    Mechanical engineering student focused on manufacturing,
-    fixture design, tooling, and practical engineering solutions
-    that make processes faster, safer, and more repeatable.
-  </p>
-
-  <div class="buttons">
-
-    <a href="#work" class="button primary">
-      View selected work
-    </a>
-
-    <a
-      href="mailto:nico.seamans99@gmail.com"
-      class="button"
-    >
-      Email me
-    </a>
-
-    <a
-      href="https://www.linkedin.com/"
-      target="_blank"
-      rel="noopener"
-      class="button"
-    >
-      LinkedIn
-    </a>
-
-  </div>
-
-</div>
-```
-
-  </header>
-
-  <!-- =========================
-       PROJECTS
-  ========================= -->
-
-  <section id="work">
-
-```
-<div class="container">
-
-  <div class="section-header">
-
-    <div class="section-number">
-      01 / SELECTED WORK
-    </div>
-
-    <h2 class="section-title">
-      Engineering projects
-    </h2>
-
-  </div>
-
-
-  <div class="projects">
-
-
-    <!-- =====================
-         AIRFOIL FIXTURE
-    ====================== -->
-
-    <article class="project">
-
-      <div class="project-top">
-
-        <div>
-
-          <h3>
-            Airfoil Lab Fixture
-          </h3>
-
-          <div class="project-subtitle">
-            Professional · Pratt & Whitney
-          </div>
-
+        <div class="eyebrow">
+          Mechanical Engineering · UNB
         </div>
 
-        <div class="tag">
-          Manufacturing
-        </div>
-
-      </div>
-
-      <p>
-        <strong>Problem:</strong>
-        Components required secure and repeatable positioning
-        for dimensional inspection.
-      </p>
-
-      <p>
-        <strong>Solution:</strong>
-        Designed a magnetic bridge-style fixture with controlled
-        contact points and a thumb-screw mechanism to establish
-        consistent positioning.
-      </p>
-
-      <p>
-        <strong>Result:</strong>
-        Reduced setup-induced measurement variation and improved
-        inspection speed and accuracy by approximately 10%.
-      </p>
-
-      <div class="project-image">
-
-        <img
-          src="Turbin-Blade.jpg"
-          alt="Manufacturing engineering fixture project"
-        >
-
-      </div>
-
-    </article>
-
-
-    <!-- =====================
-         GOLF SIMULATOR
-    ====================== -->
-
-    <article class="project">
-
-      <div class="project-top">
-
-        <div>
-
-          <h3>
-            Indoor Golf Simulator
-          </h3>
-
-          <div class="project-subtitle">
-            Personal Engineering Project
-          </div>
-
-        </div>
-
-        <div class="tag">
-          Mechanical Design
-        </div>
-
-      </div>
-
-      <p>
-        <strong>Problem:</strong>
-        Build a retractable indoor golf simulator that is
-        compact, inexpensive, and simple to operate.
-      </p>
-
-      <p>
-        <strong>Solution:</strong>
-        Developed a motorized retractable impact-screen system
-        using a geared motor and roller-chain reduction.
-      </p>
-
-      <p>
-        <strong>Drive:</strong>
-        12 V reversible worm-gear motor with a 15-tooth to
-        32-tooth #25 chain reduction and wireless control.
-      </p>
-
-      <div class="project-image">
-
-        <img
-          src="golf-simulator.png"
-          alt="Indoor golf simulator engineering project"
-        >
-
-      </div>
-
-    </article>
-
-
-    <!-- =====================
-         DOG BALL LAUNCHER
-    ====================== -->
-
-    <article class="project">
-
-      <div class="project-top">
-
-        <div>
-
-          <h3>
-            Dog Ball Launcher
-          </h3>
-
-          <div class="project-subtitle">
-            Academic · Machine Design
-          </div>
-
-        </div>
-
-        <div class="tag">
-          Design
-        </div>
-
-      </div>
-
-      <p>
-        <strong>Problem:</strong>
-        Design an indoor tennis-ball launcher capable of
-        operating safely inside a narrow hallway.
-      </p>
-
-      <p>
-        <strong>Solution:</strong>
-        Developed a dual-flywheel launching mechanism,
-        progressing from initial concept through CAD,
-        component selection, and detailed part drawings.
-      </p>
-
-      <p>
-        <strong>Design:</strong>
-        The system used two independently driven flywheels
-        to accelerate the ball before launching it at a
-        controlled angle.
-      </p>
-
-      <div class="project-image">
-
-        <img
-          src="Dog-Ball-Launcher.png"
-          alt="Dog Ball Launcher engineering project"
-        >
-
-      </div>
-
-    </article>
-
-
-    <!-- =====================
-         CMM
-    ====================== -->
-
-    <article class="project">
-
-      <div class="project-top">
-
-        <div>
-
-          <h3>
-            CMM Refurbishment
-          </h3>
-
-          <div class="project-subtitle">
-            In Progress · UNB
-          </div>
-
-        </div>
-
-        <div class="tag">
-          Metrology
-        </div>
-
-      </div>
-
-      <p>
-        <strong>Problem:</strong>
-        The UNB machine shop has an older coordinate measuring
-        machine that has been out of service.
-      </p>
-
-      <p>
-        <strong>Solution:</strong>
-        Working toward troubleshooting and refurbishing the
-        machine and developing dimensional inspection programs.
-      </p>
-
-      <p>
-        <strong>Progress:</strong>
-        Project scope is being defined with the Department of
-        Mechanical Engineering.
-      </p>
-
-      <div class="project-image">
-
-        <img
-          src="CMM-Image.png"
-          alt="Coordinate measuring machine at UNB"
-        >
-
-      </div>
-
-    </article>
-
-
-    <!-- =====================
-         E-BIKE
-    ====================== -->
-
-    <article class="project">
-
-      <div class="project-top">
-
-        <div>
-
-          <h3>
-            Bicycle to E-Bike Conversion Kit
-          </h3>
-
-          <div class="project-subtitle">
-            Senior Design · In Progress
-          </div>
-
-        </div>
-
-        <div class="tag">
-          Product Design
-        </div>
-
-      </div>
-
-      <p>
-        <strong>Problem:</strong>
-        Develop an affordable conversion system for riders
-        wanting electric assistance without replacing their
-        existing bicycle.
-      </p>
-
-      <p>
-        <strong>Solution:</strong>
-        Designing a low-cost, easy-install 500 W motor system
-        mounted to a rear rack and driving the rear tire by
-        direct contact.
-      </p>
-
-      <p>
-        <strong>Design:</strong>
-        Battery and controller integrated into the rear rack
-        without requiring permanent modification to the bicycle.
-      </p>
-
-    </article>
-
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-  <!-- =========================
-       EXPERIENCE
-  ========================= -->
-
-  <section id="experience">
-
-```
-<div class="container">
-
-  <div class="section-header">
-
-    <div class="section-number">
-      02 / EXPERIENCE
-    </div>
-
-    <h2 class="section-title">
-      Where I've worked
-    </h2>
-
-  </div>
-
-
-  <div class="experience-list">
-
-
-    <article class="experience-item">
-
-      <div class="experience-date">
-        Oct 2025 — Present
-      </div>
-
-      <div>
-
-        <h3>
-          Co-Founder & Senior Project Lead
-        </h3>
-
-        <div class="experience-company">
-          UNB Formula SAE EV
-        </div>
+        <h1>
+          Design. Build. Improve.
+        </h1>
 
         <p>
-          Lead the manufacturing team and co-lead the dynamics
-          team of 30+ students developing an electric Formula
-          SAE vehicle.
+          Mechanical engineering student focused on manufacturing,
+          fixture design, tooling, and practical engineering solutions
+          that make processes faster, safer, and more repeatable.
         </p>
 
-      </div>
+        <div class="hero-buttons">
 
-    </article>
+          <a href="#work" class="button primary">
+            View selected work
+          </a>
 
+          <a
+            href="mailto:nico.seamans99@gmail.com"
+            class="button secondary"
+          >
+            Email me
+          </a>
 
-    <article class="experience-item">
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button secondary"
+          >
+            LinkedIn
+          </a>
 
-      <div class="experience-date">
-        Jan — Aug 2026
-      </div>
-
-      <div>
-
-        <h3>
-          Aerospace Manufacturing Engineering Intern
-        </h3>
-
-        <div class="experience-company">
-          Pratt & Whitney
         </div>
 
-        <p>
-          Worked on machine specification, manufacturing
-          process development, fixture design, tooling,
-          documentation, and design-for-manufacturing
-          activities.
-        </p>
-
       </div>
 
-    </article>
+    </section>
 
 
-    <article class="experience-item">
+    <!-- =========================
+         PROJECTS
+    ========================= -->
 
-      <div class="experience-date">
-        May — Dec 2025
-      </div>
+    <section id="work">
 
-      <div>
+      <div class="container">
 
-        <h3>
-          Mechanical Engineering Student
-        </h3>
+        <div class="section-header">
 
-        <div class="experience-company">
-          J.D. Irving Limited
+          <div>
+            <div class="section-label">
+              Selected Work
+            </div>
+
+            <h2>
+              Engineering projects
+            </h2>
+          </div>
+
+          <p class="section-description">
+            A selection of manufacturing, mechanical design,
+            and hands-on engineering projects.
+          </p>
+
         </div>
 
-        <p>
-          Worked on mechanical engineering projects including
-          a remote-controlled gantry crane, winch recovery
-          system, and fall-protection retrofit.
-        </p>
+
+        <div class="projects">
+
+
+          <!-- PROJECT 01 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">
+                  01
+                </div>
+
+                <h3>
+                  Airfoil Lab Fixture
+                </h3>
+
+                <p class="project-subtitle">
+                  Professional · Pratt & Whitney
+                </p>
+              </div>
+
+              <div class="tag">
+                Manufacturing
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-details">
+
+                <div class="detail">
+                  <h4>Problem</h4>
+
+                  <p>
+                    Components required secure and repeatable positioning
+                    for dimensional inspection.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Solution</h4>
+
+                  <p>
+                    Designed a magnetic bridge-style fixture with controlled
+                    contact points and a thumb-screw mechanism to establish
+                    consistent positioning.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Result</h4>
+
+                  <p>
+                    Reduced setup-induced measurement variation and improved
+                    inspection speed and accuracy by approximately 10%.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="project-image">
+
+                <img
+                  src="Turbin-Blade.jpg"
+                  alt="Manufacturing engineering fixture project"
+                  loading="lazy"
+                >
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 02 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">
+                  02
+                </div>
+
+                <h3>
+                  Indoor Golf Simulator
+                </h3>
+
+                <p class="project-subtitle">
+                  Personal Engineering Project
+                </p>
+              </div>
+
+              <div class="tag">
+                Mechanical Design
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-details">
+
+                <div class="detail">
+                  <h4>Problem</h4>
+
+                  <p>
+                    Build a retractable indoor golf simulator that is
+                    compact, inexpensive, and simple to operate.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Solution</h4>
+
+                  <p>
+                    Developed a motorized retractable impact-screen system
+                    using a geared motor and roller-chain reduction.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Drive System</h4>
+
+                  <p>
+                    Designed around a reversible motor, chain reduction,
+                    roller system, and wireless control for simple operation.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="project-image">
+
+                <img
+                  src="golf-simulator.png"
+                  alt="Indoor golf simulator engineering project"
+                  loading="lazy"
+                >
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 03 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">
+                  03
+                </div>
+
+                <h3>
+                  Dog Ball Launcher
+                </h3>
+
+                <p class="project-subtitle">
+                  Academic · Machine Design
+                </p>
+              </div>
+
+              <div class="tag">
+                Design
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-details">
+
+                <div class="detail">
+                  <h4>Problem</h4>
+
+                  <p>
+                    Design an indoor tennis-ball launcher capable of
+                    operating safely inside a narrow hallway.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Solution</h4>
+
+                  <p>
+                    Developed a dual-flywheel launching mechanism,
+                    progressing from initial concept through CAD,
+                    component selection, and detailed part drawings.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Design</h4>
+
+                  <p>
+                    Two independently driven flywheels accelerate the ball
+                    before launching it at a controlled angle.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="project-image">
+
+                <img
+                  src="Dog-Ball-Launcher.png"
+                  alt="Dog Ball Launcher engineering project"
+                  loading="lazy"
+                >
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 04 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">
+                  04
+                </div>
+
+                <h3>
+                  CMM Refurbishment
+                </h3>
+
+                <p class="project-subtitle">
+                  In Progress · UNB
+                </p>
+              </div>
+
+              <div class="tag">
+                Metrology
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-details">
+
+                <div class="detail">
+                  <h4>Problem</h4>
+
+                  <p>
+                    The UNB machine shop has an older coordinate measuring
+                    machine that has been out of service.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Solution</h4>
+
+                  <p>
+                    Working toward troubleshooting and refurbishing the
+                    machine while developing dimensional inspection
+                    capabilities.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Progress</h4>
+
+                  <p>
+                    Project scope is being developed with the Department
+                    of Mechanical Engineering.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="project-image">
+
+                <img
+                  src="CMM-Image.png"
+                  alt="Coordinate measuring machine at UNB"
+                  loading="lazy"
+                >
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 05 -->
+
+          <article class="project">
+
+            <div class="project-top">
+
+              <div>
+                <div class="project-number">
+                  05
+                </div>
+
+                <h3>
+                  Bicycle to E-Bike Conversion Kit
+                </h3>
+
+                <p class="project-subtitle">
+                  Senior Design · In Progress
+                </p>
+              </div>
+
+              <div class="tag">
+                Product Design
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-details">
+
+                <div class="detail">
+                  <h4>Problem</h4>
+
+                  <p>
+                    Develop an affordable conversion system for riders
+                    who want electric assistance without replacing
+                    their existing bicycle.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Solution</h4>
+
+                  <p>
+                    Designing a low-cost, easy-install motor system
+                    mounted to a rear rack and driving the rear tire
+                    through direct contact.
+                  </p>
+                </div>
+
+
+                <div class="detail">
+                  <h4>Design</h4>
+
+                  <p>
+                    Battery and controller packaging are integrated
+                    into the rear rack without requiring permanent
+                    modification to the bicycle.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="project-image">
+
+                <div style="
+                  color: #7a858d;
+                  font-size: 14px;
+                  text-align: center;
+                  padding: 30px;
+                ">
+                  Project image coming soon
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
 
       </div>
 
-    </article>
+    </section>
 
 
-  </div>
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
 
-</div>
-```
+    <section id="experience">
 
-  </section>
+      <div class="container">
 
-  <!-- =========================
-       ABOUT
-  ========================= -->
+        <div class="section-header">
 
-  <section id="about">
+          <div>
+            <div class="section-label">
+              Experience
+            </div>
 
-```
-<div class="container">
+            <h2>
+              Where I've worked
+            </h2>
+          </div>
 
-  <div class="section-header">
-
-    <div class="section-number">
-      03 / ABOUT
-    </div>
-
-    <h2 class="section-title">
-      Engineering with a practical focus.
-    </h2>
-
-  </div>
+        </div>
 
 
-  <div class="about-grid">
+        <div class="experience-list">
 
 
-    <div class="about-text">
+          <!-- PRATT FIRST -->
 
-      <p>
-        I'm a Mechanical Engineering student at the University
-        of New Brunswick, completing a minor in Mathematics.
-      </p>
+          <div class="experience-item">
 
-      <p>
-        My interests are centered around practical,
-        shop-floor engineering: manufacturing processes,
-        fixture design, tooling, GD&T, metrology, and process
-        improvement.
-      </p>
+            <div class="experience-date">
+              Jan — Aug 2026
+            </div>
 
-      <p>
-        I enjoy taking an engineering problem from an initial
-        idea through CAD, fabrication, testing, and
-        implementation.
-      </p>
+            <div>
 
-      <p>
-        Outside engineering, I'm a competitive powerlifter and
-        golfer. I'm also involved with UNB Formula SAE EV,
-        where I get to combine engineering design with
-        hands-on manufacturing and team leadership.
-      </p>
+              <h3>
+                Aerospace Manufacturing Engineering Intern
+              </h3>
 
-    </div>
+              <p class="experience-company">
+                Pratt & Whitney
+              </p>
+
+              <p>
+                Worked on machine specification, manufacturing process
+                development, fixture design, tooling, documentation,
+                and design-for-manufacturing activities.
+              </p>
+
+            </div>
+
+          </div>
 
 
-    <div class="skills">
+          <!-- FORMULA SAE SECOND -->
 
-      <span class="skill">CAD</span>
-      <span class="skill">CATIA V5</span>
-      <span class="skill">GD&T</span>
-      <span class="skill">Manufacturing</span>
-      <span class="skill">DFM</span>
-      <span class="skill">Fixture Design</span>
-      <span class="skill">Tooling</span>
-      <span class="skill">CNC</span>
-      <span class="skill">CMM</span>
-      <span class="skill">Process Improvement</span>
-      <span class="skill">Machine Design</span>
-      <span class="skill">MATLAB</span>
-      <span class="skill">Python</span>
-      <span class="skill">3D Printing</span>
-      <span class="skill">Formula SAE</span>
-      <span class="skill">Leadership</span>
+          <div class="experience-item">
 
-    </div>
+            <div class="experience-date">
+              Oct 2025 — Present
+            </div>
 
-  </div>
+            <div>
 
-</div>
-```
+              <h3>
+                Co-Founder & Senior Project Lead
+              </h3>
 
-  </section>
+              <p class="experience-company">
+                UNB Formula SAE EV
+              </p>
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
+              <p>
+                Lead the manufacturing team and co-lead the dynamics
+                team of 30+ students developing an electric Formula
+                SAE vehicle.
+              </p>
 
-  <section id="contact" class="contact">
+            </div>
 
-```
-<div class="container">
+          </div>
 
-  <div class="section-number">
-    04 / CONTACT
-  </div>
 
-  <h2 class="section-title">
-    Let's build something.
-  </h2>
+          <!-- JDI THIRD -->
 
-  <p>
-    I'm interested in manufacturing engineering, mechanical
-    design, aerospace, and engineering roles where I can work
-    on practical problems and build things that matter.
-  </p>
+          <div class="experience-item">
 
-  <div class="contact-links">
+            <div class="experience-date">
+              May — Dec 2025
+            </div>
 
-    <a
-      href="mailto:nico.seamans99@gmail.com"
-      class="contact-button"
-    >
-      Email
-    </a>
+            <div>
 
-    <a
-      href="https://www.linkedin.com/"
-      target="_blank"
-      rel="noopener"
-      class="contact-button"
-    >
-      LinkedIn
-    </a>
+              <h3>
+                Mechanical Engineering Student
+              </h3>
 
-    <a
-      href="https://github.com/nicoseamans"
-      target="_blank"
-      rel="noopener"
-      class="contact-button"
-    >
-      GitHub
-    </a>
+              <p class="experience-company">
+                J.D. Irving Limited
+              </p>
 
-  </div>
+              <p>
+                Worked on mechanical engineering projects including
+                a remote-controlled gantry crane, winch recovery
+                system, and fall-protection retrofit.
+              </p>
 
-</div>
-```
+            </div>
 
-  </section>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div>
+            <div class="section-label">
+              About
+            </div>
+
+            <h2>
+              Practical engineering.
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+          <div class="about-text">
+
+            <p>
+              I'm a Mechanical Engineering student at the University
+              of New Brunswick, completing a minor in Mathematics.
+            </p>
+
+            <p>
+              My interests are centered around practical, shop-floor
+              engineering: manufacturing processes, fixture design,
+              tooling, GD&T, metrology, and process improvement.
+            </p>
+
+            <p>
+              I enjoy taking an engineering problem from an initial
+              idea through CAD, fabrication, testing, and implementation.
+            </p>
+
+            <p>
+              Outside engineering, I'm a competitive powerlifter and
+              golfer. I'm also involved with UNB Formula SAE EV, where
+              I get to combine engineering design with hands-on
+              manufacturing and team leadership.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="section-label">
+              Skills
+            </div>
+
+            <div class="skills">
+
+              <span class="skill">CAD</span>
+              <span class="skill">CATIA V5</span>
+              <span class="skill">GD&T</span>
+              <span class="skill">Manufacturing</span>
+              <span class="skill">DFM</span>
+              <span class="skill">Fixture Design</span>
+              <span class="skill">Tooling</span>
+              <span class="skill">CNC</span>
+              <span class="skill">CMM</span>
+              <span class="skill">Process Improvement</span>
+              <span class="skill">Machine Design</span>
+              <span class="skill">MATLAB</span>
+              <span class="skill">Python</span>
+              <span class="skill">3D Printing</span>
+              <span class="skill">Formula SAE</span>
+              <span class="skill">Leadership</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact" class="contact">
+
+      <div class="container contact-inner">
+
+        <div>
+
+          <div class="contact-label">
+            Contact
+          </div>
+
+          <h2>
+            Let's build something.
+          </h2>
+
+          <p>
+            I'm interested in manufacturing engineering, mechanical
+            design, aerospace, and engineering roles where I can work
+            on practical problems and build things that matter.
+          </p>
+
+        </div>
+
+
+        <div class="contact-links">
+
+          <a href="mailto:nico.seamans99@gmail.com">
+            nico.seamans99@gmail.com
+          </a>
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/nicoseamans"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
 
   <!-- =========================
        FOOTER
@@ -1168,13 +1395,17 @@ content="Nico Seamans' mechanical engineering portfolio, featuring manufacturing
 
   <footer>
 
-```
-<div class="container">
+    <div class="container footer-inner">
 
-  © 2026 Nico Seamans · Mechanical Engineering · UNB
+      <div>
+        © 2026 Nico Seamans
+      </div>
 
-</div>
-```
+      <div>
+        Mechanical Engineering · UNB
+      </div>
+
+    </div>
 
   </footer>
 
